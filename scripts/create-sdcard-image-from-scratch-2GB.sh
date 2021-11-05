@@ -26,6 +26,7 @@ sudo apt-get update
 sudo apt install -y python3-pip python3-pil
 sudo -H pip3 install Cython
 sudo -H pip3 install --upgrade numpy
+sudo apt install -y cuda-toolkit-10-2
 
 # Install jtop
 echo -e "\e[100m Install jtop \e[0m"
@@ -43,7 +44,6 @@ sudo -H pip3 install jetson-stats
 
 # Install the pre-built PyTorch pip wheel 
 echo -e "\e[45m Install the pre-built PyTorch pip wheel for JetPack 4.6 \e[0m"
-sudo apt-get install -y cuda-toolkit-10-2
 cd
 wget -N https://nvidia.box.com/shared/static/h1z9sw4bb1ybi0rm3tu8qdj8hs05ljbm.whl -O torch-1.9.0-cp36-cp36m-linux_aarch64.whl
 sudo apt-get install -y libopenblas-base libopenmpi-dev libjpeg-dev zlib1g-dev libopenblas-dev libblas-dev liblapack-dev libatlas-base-dev gfortran libfreetype6-dev libcanberra-gtk*
@@ -74,11 +74,13 @@ sudo python3 -m pip install git+https://github.com/ipython/traitlets@dead2b8cdde
 echo -e "\e[48;5;172m Install Jupyter Lab \e[0m"
 sudo apt install -y curl
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt install -y nodejs
-sudo apt install -y libffi-dev
-sudo pip3 install packaging
-sudo pip3 install jupyter jupyterlab
-sudo jupyter labextension install @jupyter-widgets/jupyterlab-manager
+sudo apt install -y nodejs libffi-dev 
+sudo -H pip3 install packaging
+sudo -H pip3 install jupyter jupyterlab
+sudo -H jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
+# fix for permission error
+# sudo chown -R jetson:jetson ~/.jupyter
 
 jupyter lab --generate-config
 python3 -c "from notebook.auth.security import set_password; set_password('$password', '$HOME/.jupyter/jupyter_notebook_config.json')"
@@ -111,8 +113,8 @@ sudo chown -R jetson:jetson ~/.local/share/
 cd
 sudo apt install -y python3-smbus
 cd ~/Downloads/jetbot
-sudo apt-get install -y cmake
-sudo python3 setup.py install 
+#sudo apt-get install -y cmake
+#sudo python3 setup.py install 
 
 # Install jetbot services
 cd jetbot/utils
