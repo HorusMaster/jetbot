@@ -71,10 +71,11 @@ sudo python3 -m pip install git+https://github.com/ipython/traitlets@dead2b8cdde
 # Install jupyter lab
 echo -e "\e[48;5;172m Install Jupyter Lab \e[0m"
 sudo apt install -y curl
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt install -y nodejs libffi-dev node-gyp npm
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt install -y nodejs
+sudo apt install -y libffi-dev
 sudo pip3 install jupyter jupyterlab
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
+# jupyter labextension install @jupyter-widgets/jupyterlab-manager
 # sudo -H jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 jupyter lab --generate-config
@@ -137,6 +138,10 @@ sudo systemctl disable nvzramconfig.service
 
 # Copy JetBot notebooks to home directory
 cp -r ~/jetbot/notebooks ~/Notebooks
+
+sudo apt-get remove -y --purge make gcc build-essential
+sudo apt-get autoremove -y
+sudo rm -rf /var/lib/apt/lists/*
 
 echo -e "\e[42m All done! \e[0m"
 
