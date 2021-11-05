@@ -105,7 +105,7 @@ sudo chown -R jetson:jetson ~/.local/share/
 # install jetbot python module
 cd
 sudo apt install -y python3-smbus
-cd ~/jetbot
+cd ~/Downloads/jetbot
 sudo apt-get install -y cmake
 sudo python3 setup.py install 
 
@@ -139,7 +139,7 @@ sudo systemctl set-default multi-user
 sudo systemctl disable nvzramconfig.service
 
 # Copy JetBot notebooks to home directory
-cp -r ~/jetbot/notebooks ~/Notebooks
+cp -r ~/Downloads/jetbot/notebooks ~/Notebooks
 
 sudo apt-get remove -y --purge make gcc build-essential
 sudo apt-get autoremove -y
