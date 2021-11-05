@@ -154,6 +154,7 @@ sudo systemctl disable nvzramconfig.service
 
 # Copy JetBot notebooks to home directory
 cp -r ~/Downloads/jetbot/notebooks ~/Notebooks
+sudo chown -R jetson:jetson ~/Notebooks
 
 sudo apt-get remove -y --purge make gcc build-essential
 sudo apt-get autoremove -y
