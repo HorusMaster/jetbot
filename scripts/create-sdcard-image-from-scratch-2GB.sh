@@ -65,6 +65,11 @@ git clone https://github.com/NVIDIA-AI-IOT/torch2trt
 cd torch2trt
 sudo python3 setup.py install
 
+cd $HOME
+git clone https://github.com/NVIDIA-AI-IOT/jetcam
+cd jetcam
+sudo python3 setup.py install
+
 # Install traitlets (master, to support the unlink() method)
 echo -e "\e[48;5;172m Install traitlets \e[0m"
 #sudo python3 -m pip install git+https://github.com/ipython/traitlets@master
