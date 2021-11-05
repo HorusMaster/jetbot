@@ -26,6 +26,8 @@ sudo apt-get update
 sudo apt install -y python3-pip python3-pil
 sudo -H pip3 install Cython
 sudo -H pip3 install --upgrade numpy
+
+echo -e "\e[45m Cuda Toolkit \e[0m"
 sudo apt install -y cuda-toolkit-10-2
 
 # Install jtop
