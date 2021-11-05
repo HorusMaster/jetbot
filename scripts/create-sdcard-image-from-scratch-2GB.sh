@@ -27,9 +27,6 @@ sudo apt install -y python3-pip python3-pil
 sudo -H pip3 install Cython
 sudo -H pip3 install --upgrade numpy
 
-echo -e "\e[45m Cuda Toolkit \e[0m"
-sudo apt install -y cuda-toolkit-10-2
-
 # Install jtop
 echo -e "\e[100m Install jtop \e[0m"
 sudo -H pip3 install jetson-stats 
@@ -87,7 +84,7 @@ sudo -H pip3 install jupyter jupyterlab
 sudo -H jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 # fix for permission error
-# sudo chown -R jetson:jetson ~/.jupyter
+sudo chown -R jetson:jetson ~/.jupyter
 
 jupyter lab --generate-config
 python3 -c "from notebook.auth.security import set_password; set_password('$password', '$HOME/.jupyter/jupyter_notebook_config.json')"
@@ -141,12 +138,15 @@ sudo apt-get install -y \
     gstreamer1.0-plugins-bad \
     libgstreamer-plugins-bad1.0-0 \
     gstreamer1.0-plugins-good \
-    python3-gst-1.0
+    python3-gst-1.0 \
+    nano
     
 # install zmq dependency (should actually already be resolved by jupyter)
 # sudo -H pip3 install pyzmq
     
 
+echo -e "\e[45m Cuda Toolkit \e[0m"
+sudo apt install -y cuda-toolkit-10-2
 # Optimize the system configuration to create more headroom
 sudo nvpmodel -m 0
 sudo systemctl set-default multi-user
