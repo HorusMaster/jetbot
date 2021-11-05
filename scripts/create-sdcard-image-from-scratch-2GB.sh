@@ -22,7 +22,7 @@ sudo usermod -aG i2c $USER
 
 # Install pip and some python dependencies
 echo -e "\e[104m Install pip and some python dependencies \e[0m"
-sudo apt-get update
+sudo apt-get update && apt-get upgrade
 sudo apt install -y python3-pip python3-pil
 sudo -H pip3 install Cython
 sudo -H pip3 install --upgrade numpy
