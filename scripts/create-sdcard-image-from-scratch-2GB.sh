@@ -82,6 +82,11 @@ sudo pip3 install jupyter jupyterlab
 
 jupyter lab --generate-config
 python3 -c "from notebook.auth.security import set_password; set_password('$password', '$HOME/.jupyter/jupyter_notebook_config.json')"
+#Este es para el error libgomp.so.1
+echo "import os
+c = get_config()
+os.environ['LD_PRELOAD'] = '/usr/lib/aarch64-linux-gnu/libgomp.so.1'
+c.Spawner.env.update('LD_PRELOAD')" >> ~/.jupyter/jupyter_lab_config.py
 
 # fix for permission error
 sudo chown -R jetson:jetson ~/.local/share/
