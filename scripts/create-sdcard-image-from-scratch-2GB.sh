@@ -76,6 +76,7 @@ sudo apt install -y curl
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt install -y nodejs
 sudo apt install -y libffi-dev
+sudo pip3 install packaging
 sudo pip3 install jupyter jupyterlab
 # jupyter labextension install @jupyter-widgets/jupyterlab-manager
 # sudo -H jupyter labextension install @jupyter-widgets/jupyterlab-manager
@@ -135,7 +136,7 @@ sudo apt-get install -y \
     python3-gst-1.0
     
 # install zmq dependency (should actually already be resolved by jupyter)
-sudo -H pip3 install pyzmq
+# sudo -H pip3 install pyzmq
     
 
 # Optimize the system configuration to create more headroom
