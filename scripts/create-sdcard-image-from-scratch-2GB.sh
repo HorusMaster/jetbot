@@ -42,17 +42,18 @@ sudo -H pip3 install jetson-stats
 # sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v44 'tensorflow<2'
 
 # Install the pre-built PyTorch pip wheel 
-echo -e "\e[45m Install the pre-built PyTorch pip wheel  \e[0m"
+echo -e "\e[45m Install the pre-built PyTorch pip wheel for JetPack 4.6 \e[0m"
 cd
-wget -N https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl -O torch-1.8.1-cp36-cp36m-linux_aarch64.whl
+wget -N https://nvidia.box.com/shared/static/h1z9sw4bb1ybi0rm3tu8qdj8hs05ljbm.whl -O torch-1.9.0-cp36-cp36m-linux_aarch64.whl
 sudo apt-get install -y libopenblas-base libopenmpi-dev libjpeg-dev zlib1g-dev libopenblas-dev libblas-dev liblapack-dev libatlas-base-dev gfortran libfreetype6-dev libcanberra-gtk*
 sudo -H pip3 install numpy torch-1.8.1-cp36-cp36m-linux_aarch64.whl 
 
 # Install torchvision package
 echo -e "\e[45m Install torchvision package \e[0m"
+sudo apt-get install libpython3-dev libavcodec-dev libavformat-dev libswscale-dev
 cd
-git clone --branch v0.9.1 https://github.com/pytorch/vision torchvision
-export BUILD_VERSION=0.9.1
+git clone --branch v0.10.0 https://github.com/pytorch/vision torchvision
+export BUILD_VERSION=0.10.0
 cd torchvision
 #git checkout v0.4.0
 sudo python3 setup.py install
