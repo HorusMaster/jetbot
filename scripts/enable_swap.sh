@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo -e "\e[100m Enable swap \e[0m"
 SWAPDIRECTORY="/"
 SWAPSIZE=4
 NAME_SWAP="swfile"
