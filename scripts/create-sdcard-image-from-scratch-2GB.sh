@@ -18,7 +18,7 @@ echo -e "\e[100m Enable i2c permissions \e[0m"
 sudo usermod -aG i2c $USER
 
 # Make swapfile
-sh ./enable_swap.sh
+# sh ./enable_swap.sh
 
 # Install pip and some python dependencies
 echo -e "\e[104m Install pip and some python dependencies \e[0m"
