@@ -159,7 +159,9 @@ sudo rm -rf /var/lib/apt/lists/*
 
 echo -e "\e[42m All done! \e[0m"
 
-sudo reboot
-
 #record the time this script ends
 date
+
+sudo reboot
+
+
