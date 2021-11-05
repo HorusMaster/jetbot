@@ -78,8 +78,7 @@ sudo apt install -y nodejs
 sudo apt install -y libffi-dev
 sudo pip3 install packaging
 sudo pip3 install jupyter jupyterlab
-# jupyter labextension install @jupyter-widgets/jupyterlab-manager
-# sudo -H jupyter labextension install @jupyter-widgets/jupyterlab-manager
+sudo jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 jupyter lab --generate-config
 python3 -c "from notebook.auth.security import set_password; set_password('$password', '$HOME/.jupyter/jupyter_notebook_config.json')"
