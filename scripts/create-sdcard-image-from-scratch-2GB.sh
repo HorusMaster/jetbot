@@ -29,7 +29,7 @@ sudo -H pip3 install --upgrade numpy
 
 # Install jtop
 echo -e "\e[100m Install jtop \e[0m"
-sudo -H pip3 install jetson-stats 
+sudo -H pip install -U jetson-stats
 
 
 # Install the pre-built TensorFlow pip wheel
