@@ -43,6 +43,7 @@ sudo -H pip3 install jetson-stats
 
 # Install the pre-built PyTorch pip wheel 
 echo -e "\e[45m Install the pre-built PyTorch pip wheel for JetPack 4.6 \e[0m"
+sudo apt-get install -y cuda-toolkit-10-2
 cd
 wget -N https://nvidia.box.com/shared/static/h1z9sw4bb1ybi0rm3tu8qdj8hs05ljbm.whl -O torch-1.9.0-cp36-cp36m-linux_aarch64.whl
 sudo apt-get install -y libopenblas-base libopenmpi-dev libjpeg-dev zlib1g-dev libopenblas-dev libblas-dev liblapack-dev libatlas-base-dev gfortran libfreetype6-dev libcanberra-gtk*
@@ -50,7 +51,7 @@ sudo -H pip3 install numpy torch-1.9.0-cp36-cp36m-linux_aarch64.whl
 
 # Install torchvision package
 echo -e "\e[45m Install torchvision package \e[0m"
-sudo apt-get install libpython3-dev libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get install -y libpython3-dev libavcodec-dev libavformat-dev libswscale-dev
 cd
 git clone --branch v0.10.0 https://github.com/pytorch/vision torchvision
 export BUILD_VERSION=0.10.0
