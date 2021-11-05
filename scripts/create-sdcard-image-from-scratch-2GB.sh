@@ -46,7 +46,6 @@ echo -e "\e[45m Install the pre-built PyTorch pip wheel  \e[0m"
 cd
 wget -N https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl -O torch-1.8.1-cp36-cp36m-linux_aarch64.whl
 sudo apt-get install -y libopenblas-base libopenmpi-dev libjpeg-dev zlib1g-dev libopenblas-dev libblas-dev liblapack-dev libatlas-base-dev gfortran libfreetype6-dev libcanberra-gtk*
-sudo -H pip3 install Cython
 sudo -H pip3 install numpy torch-1.8.1-cp36-cp36m-linux_aarch64.whl 
 
 # Install torchvision package
