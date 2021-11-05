@@ -18,7 +18,6 @@ echo -e "\e[100m Enable i2c permissions \e[0m"
 sudo usermod -aG i2c $USER
 
 # Make swapfile
-cd 
 sh ./enable_swap.sh
 
 # Install pip and some python dependencies
